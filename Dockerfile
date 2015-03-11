@@ -77,8 +77,10 @@ RUN apt-get update -qqy \
 #==========
 # Selenium
 #==========
-RUN  mkdir -p /opt/selenium \
-  && wget --no-verbose http://selenium-release.storage.googleapis.com/2.44/selenium-server-standalone-2.44.0.jar -O /opt/selenium/selenium-server-standalone.jar
+#RUN  mkdir -p /opt/selenium \
+#  && wget --no-verbose http://selenium-release.storage.googleapis.com/2.44/selenium-server-standalone-2.44.0.jar -O /opt/selenium/selenium-server-standalone.jar
+RUN mkdir -p /opt/selenium
+ADD bin/selenium-server-standalone.jar /opt/selenium/selenium-server-standalone.jar
 
 #==================
 # Chrome webdriver
